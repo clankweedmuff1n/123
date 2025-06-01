@@ -1,0 +1,174 @@
+.index-home {
+
+    padding: 180px 6rem 3rem;
+    color: #fff;
+    text-align: center;
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.index-home .index-content h3 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: #f1c40f;
+    font-weight: 700;
+}
+
+.index-home .index-content h3 span {
+    color: #fff;
+}
+
+.index-home .index-content p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    color: #ccc;
+}
+
+.index-programs {
+    padding: 4rem 3rem;
+    background: #1a1a1a;
+    padding-top: 120px;
+}
+
+.index-programs .index-heading {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: #f1c40f;
+}
+
+.index-programs .index-heading span {
+    color: #fff;
+}
+
+.index-box-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 0 3rem;
+}
+
+.index-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+    gap: 2.5rem;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.index-box {
+    background: #222;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+}
+
+.index-box:hover {
+    transform: translateY(-15px);
+}
+
+.index-box .index-content h3 {
+    font-size: 1.8rem;
+    color: #f1c40f;
+}
+
+.index-box .index-content p {
+    font-size: 1.1rem;
+    color: #ccc;
+    flex-grow: 1;
+}
+
+.index-join {
+    background: #222;
+    padding: 3rem 4rem;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 120px;
+}
+
+.index-join .index-content {
+    max-width: 800px;
+    text-align: center;
+}
+
+.index-join .index-content h3 {
+    font-size: 5rem;
+    color: #f1c40f;
+    margin-bottom: 1.2rem;
+}
+
+.index-join .index-content h3 span {
+    color: #fff;
+}
+
+.index-join .index-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 2.5rem;
+    text-align: center;
+}
+
+.index-join .index-content ul li {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin: 0.75rem 0;
+}
+
+@media (max-width: 768px) {
+    .index-home {
+        padding: 4rem 1.5rem;
+        padding-top: 100px;
+    }
+
+    .index-home .index-content h3 {
+        font-size: 2.5rem;
+    }
+
+    .index-home .index-content p {
+        font-size: 1.1rem;
+    }
+
+    .index-programs {
+        padding: 2rem 1.5rem;
+        padding-top: 100px;
+    }
+
+    .index-programs .index-heading {
+        font-size: 2.5rem;
+    }
+
+    .index-row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .index-box-container {
+        padding: 0 1.5rem;
+    }
+
+    .index-join {
+        padding: 2rem;
+        min-height: 80vh;
+        padding-top: 100px;
+    }
+
+    .index-join .index-content h3 {
+        font-size: 3.5rem;
+    }
+
+    .index-join .index-content ul li {
+        font-size: 1.1rem;
+    }
+}

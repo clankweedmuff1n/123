@@ -1,0 +1,33 @@
+.reset-banner {
+    background: #333;
+    padding: 6rem 3rem;
+    text-align: center;
+    color: #fff;
+    padding-top: 120px;
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reset-banner .reset-content h2 {
+    font-size: 3rem;
+    color: #f1c40f;
+    margin-bottom: 1.5rem;
+}
+
+.reset-banner .reset-content p {
+    font-size: 1.3rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+}
+
+.reset-banner .btn {
+    padding: 1rem 2.5rem;
+    background: #f1c40f;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}

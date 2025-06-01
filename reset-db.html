@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сброс базы данных</title>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/modal.css">
+
+</head>
+<body>
+<header class="header">
+  <div class="logo">
+    <h1>Фитнес традиция</h1>
+  </div>
+  <nav class="nav">
+    <a href="index.html" class="nav-link">Главная</a>
+    <a href="join.html" class="nav-link">Абонементы</a>
+    <a href="contact.html" class="nav-link">Контакты</a>
+    <a href="login.html" class="nav-link" id="loginLink">Вход</a>
+    <a href="register.html" class="nav-link" id="registerLink">Регистрация</a>
+    <a href="dashboard.html" class="nav-link" id="dashboardLink" style="display: none;">Личный кабинет</a>
+    <a href="logout.html" class="nav-link" id="logoutLink" style="display: none;">Выход</a>
+  </nav>
+</header>
+<main>
+  <section class="reset-banner animated-section">
+    <div class="reset-content">
+      <h2>Сброс базы данных</h2>
+      <p>Нажмите кнопку, чтобы очистить и пересоздать базу данных.</p>
+      <button id="resetDb" class="btn">Сбросить базу данных</button>
+    </div>
+  </section>
+</main>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/modal.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const resetBtn = document.getElementById('resetDb');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', async () => {
+        try {
+          localStorage.removeItem('sqlite3_db');
+          localStorage.removeItem('user_id');
+          localStorage.removeItem('user_name');
+          localStorage.removeItem('role');
+          await initDatabase(); // Пересоздаём базу
+          saveDatabase(); // Сохраняем новую базу
+          showModal('База данных успешно сброшена!');
+          updateHeader();
+        } catch (err) {
+          showModal('Ошибка при сбросе базы данных.');
+        }
+      });
+    }
+  });
+</script>
+</body>
+</html>

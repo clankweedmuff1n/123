@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты</title>
+    <link rel="stylesheet" href="assets/css/site.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+    <link rel="stylesheet" href="assets/css/modal.css">
+
+</head>
+<body>
+<header class="header">
+    <div class="logo">
+        <h1>Фитнес традиция</h1>
+    </div>
+    <nav class="nav">
+        <a href="index.html" class="nav-link">Главная</a>
+        <a href="join.html" class="nav-link">Абонементы</a>
+        <a href="contact.html" class="nav-link">Контакты</a>
+        <a href="login.html" class="nav-link" id="loginLink">Вход</a>
+        <a href="register.html" class="nav-link" id="registerLink">Регистрация</a>
+        <a href="dashboard.html" class="nav-link" id="dashboardLink" style="display: none;">Личный кабинет</a>
+        <a href="logout.html" class="nav-link" id="logoutLink" style="display: none;">Выход</a>
+    </nav>
+</header>
+<main>
+    <section class="contact-banner animated-section">
+        <div class="contact-content">
+            <h2>Свяжитесь с нами</h2>
+            <p>Мы здесь, чтобы ответить на ваши вопросы!</p>
+        </div>
+    </section>
+    <section class="contact-get-in-touch animated-section">
+        <form class="contact-form" id="contactForm">
+            <input type="text" id="name" name="name" placeholder="Имя" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <textarea id="message" name="message" placeholder="Сообщение" required></textarea>
+            <button type="submit" class="btn">Отправить</button>
+        </form>
+    </section>
+</main>
+<div id="modal" style="display: none;">
+    <div class="modal-content">
+        <span id="modalClose">×</span>
+        <p id="modalMessage"></p>
+    </div>
+</div>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/modal.js"></script>
+<script src="assets/js/contact.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('contactForm');
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+                try {
+                    const response = await fetch('http://localhost:3000/api/contact', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ name, email, message }),
+                    });
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        throw new Error(errorData.error || 'Ошибка сервера');
+                    }
+                    const data = await response.json();
+                    showModal('Сообщение отправлено!');
+                    form.reset();
+                } catch (err) {
+                    showModal('Ошибка: ' + err.message);
+                    console.error('Fetch error:', err);
+                }
+            });
+        }
+    });
+</script>
+</body>
+</html>

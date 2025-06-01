@@ -1,0 +1,64 @@
+.admin-banner {
+
+    padding: 6rem 3rem;
+    text-align: center;
+    color: #fff;
+    padding-top: 120px;
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-banner .admin-content h2 {
+    font-size: 3rem;
+    color: #f1c40f;
+    margin-bottom: 1.5rem;
+}
+
+.admin-banner .admin-content p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    color: #ccc;
+}
+
+.admin-panel {
+    padding: 4rem 3rem;
+    background: #1a1a1a;
+}
+
+.admin-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.admin-content h3 {
+    font-size: 2rem;
+    color: #f1c40f;
+    margin-bottom: 1.5rem;
+}
+
+.admin-content ul {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.admin-content ul li {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) {
+    .admin-banner {
+        padding: 4rem 1.5rem;
+        padding-top: 100px;
+    }
+    .admin-banner .admin-content h2 {
+        font-size: 2.5rem;
+    }
+    .admin-panel {
+        padding: 2rem 1.5rem;
+    }
+}

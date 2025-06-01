@@ -1,0 +1,83 @@
+.login-banner {
+    margin-top: 10vh;
+    padding: 1rem 3rem;
+    text-align: center;
+    color: #fff;
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-banner .login-content h2 {
+    font-size: 3rem;
+    color: #f1c40f;
+    margin-bottom: 1.5rem;
+}
+
+.login-banner .login-content p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    color: #ccc;
+}
+
+.login-form {
+    padding: 4rem 3rem;
+    background: #1a1a1a;
+}
+
+.login-content {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.login-content input {
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: #fff;
+    font-size: 1.1rem;
+    outline: none;
+    width: 100%;
+}
+
+.login-content input::placeholder {
+    color: #ccc;
+    font-size: 1.1rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+.login-content p {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.login-content p a {
+    color: #f1c40f;
+    text-decoration: none;
+}
+
+.login-content p a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .login-banner {
+        padding: 4rem 1.5rem;
+        padding-top: 100px;
+    }
+
+    .login-banner .login-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .login-form {
+        padding: 2rem 1.5rem;
+    }
+}

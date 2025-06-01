@@ -1,0 +1,111 @@
+.about-banner {
+
+    padding: 6rem 3rem;
+    text-align: center;
+    color: #fff;
+    padding-top: 120px;
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-banner .about-content {
+    max-width: 700px;
+}
+
+.about-banner .about-content h3 {
+    font-size: 3rem;
+    color: #f1c40f;
+    margin-bottom: 1.5rem;
+}
+
+.about-banner .about-content p {
+    font-size: 1.3rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+}
+
+.about {
+    padding: 4rem 3rem;
+    background: #1a1a1a;
+}
+
+.about-box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-box {
+    background: #222;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.about-box.about-img img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.about-box h4 {
+    font-size: 1.8rem;
+    color: #f1c40f;
+    margin-bottom: 1rem;
+}
+
+.about-box p {
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+.about-advantages {
+    padding: 4rem 3rem;
+    background: #222;
+}
+
+.about-advantages .about-content {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.about-advantages .about-content h3 {
+    font-size: 3rem;
+    color: #f1c40f;
+    margin-bottom: 1rem;
+}
+
+.about-advantages .about-content p {
+    font-size: 1.3rem;
+    color: #ccc;
+}
+
+.about-icon img {
+    width: 50px;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .about-banner {
+        padding: 4rem 1.5rem;
+        padding-top: 100px;
+    }
+    .about-banner .about-content h3 {
+        font-size: 2.5rem;
+    }
+    .about-banner .about-content p {
+        font-size: 1.1rem;
+    }
+    .about {
+        padding: 2rem 1.5rem;
+    }
+    .about-advantages {
+        padding: 2rem 1.5rem;
+    }
+    .about-advantages .about-content h3 {
+        font-size: 2.5rem;
+    }
+}

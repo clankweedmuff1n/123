@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фитнес традиция</title>
+    <link rel="stylesheet" href="assets/css/site.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/join.css">
+    <link rel="stylesheet" href="assets/css/modal.css">
+</head>
+<body>
+<header class="header">
+    <div class="logo">
+        <h1>Фитнес традиция</h1>
+    </div>
+    <nav class="nav">
+        <a href="index.html" class="nav-link">Главная</a>
+        <a href="join.html" class="nav-link">Абонементы</a>
+        <a href="contact.html" class="nav-link">Контакты</a>
+        <a href="login.html" class="nav-link" id="loginLink">Вход</a>
+        <a href="register.html" class="nav-link" id="registerLink">Регистрация</a>
+        <a href="dashboard.html" class="nav-link" id="dashboardLink" style="display: none;">Личный кабинет</a>
+        <a href="#" class="nav-link" id="logoutLink" style="display: none;">Выход</a>
+    </nav>
+</header>
+<main>
+    <section class="join-banner">
+        <div class="join-content">
+            <h2>Присоединяйтесь к нам</h2>
+            <p>Выберите подходящий абонемент и начните свой путь к здоровью!</p>
+        </div>
+    </section>
+    <section class="join-plans">
+        <div class="plan-box">
+            <h3>Базовый</h3>
+            <div class="price">1000 руб/мес</div>
+            <ul>
+                <li>Доступ к тренажёрному залу</li>
+                <li>Групповые занятия (2 в неделю)</li>
+                <li>Консультация тренера</li>
+            </ul>
+            <button class="btn select-plan" data-plan="basic" style="display: none;">Выбрать</button>
+            <button class="btn purchase-plan" data-plan="basic" style="display: none;">Оформить</button>
+        </div>
+        <div class="plan-box-vip">
+            <h3>VIP</h3>
+            <div class="price">5000 руб/мес</div>
+            <ul>
+                <li>Всё из Премиум</li>
+                <li>Персональный тренер (4 тренировки/мес)</li>
+                <li>Индивидуальный план питания</li>
+                <li>Приоритетное бронирование</li>
+            </ul>
+            <button class="btn select-plan" data-plan="vip" style="display: none;">Выбрать</button>
+            <button class="btn purchase-plan" data-plan="vip" style="display: none;">Оформить</button>
+        </div>
+        <div class="plan-box">
+            <h3>Премиум</h3>
+            <div class="price">2000 руб/мес</div>
+            <ul>
+                <li>Неограниченный доступ ко всем залам</li>
+                <li>Групповые занятия (без ограничений)</li>
+                <li>Персональная тренировка (1 в месяц)</li>
+                <li>Доступ к бассейну</li>
+            </ul>
+            <button class="btn select-plan" data-plan="premium" style="display: none;">Выбрать</button>
+            <button class="btn purchase-plan" data-plan="premium" style="display: none;">Оформить</button>
+        </div>
+    </section>
+    <section class="join-form" style="display: none;">
+        <div class="join-content">
+            <h3>Оформить абонемент: <span id="selectedPlan">Базовый</span></h3>
+            <form id="joinForm">
+                <input type="text" id="name" placeholder="Ваше имя" required>
+                <input type="email" id="email" placeholder="Ваш email" required>
+                <input type="hidden" id="membershipType" name="membershipType">
+                <button type="submit" class="btn">Оформить</button>
+            </form>
+        </div>
+    </section>
+</main>
+<div id="modal" style="display: none;">
+    <div class="modal-content">
+        <span id="modalClose">×</span>
+        <p id="modalMessage"></p>
+    </div>
+</div>
+<div id="purchaseModal" style="display: none;">
+    <div class="modal-content">
+        <span id="purchaseModalClose">×</span>
+        <p id="purchaseModalMessage"></p>
+        <div id="purchaseModalButtons">
+            <button class="btn" id="purchaseModalConfirm">Подтвердить</button>
+            <button class="btn" id="purchaseModalCancel">Отмена</button>
+        </div>
+    </div>
+</div>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/modal.js"></script>
+<script src="assets/js/join.js"></script>
+</body>
+</html>

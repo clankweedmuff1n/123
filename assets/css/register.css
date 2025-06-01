@@ -1,0 +1,111 @@
+.register-banner {
+    margin-top: 10vh;
+    padding: 1rem 3rem;
+    text-align: center;
+    color: #fff;
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-banner .register-content {
+    max-width: 700px;
+}
+
+.register-banner .register-content h2 {
+    font-size: 3rem;
+    color: #f1c40f;
+    margin-bottom: 1.5rem;
+}
+
+.register-banner .register-content p {
+    font-size: 1.3rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+}
+
+.register-form {
+    padding: 4rem 3rem;
+    background: #1a1a1a;
+}
+
+.register-content {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.register-content input {
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: #fff;
+    font-size: 1.1rem;
+    outline: none;
+    width: 100%;
+}
+
+.register-content input::placeholder {
+    color: #ccc;
+    font-size: 1.1rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+.register-content button.btn {
+    padding: 1rem 2.5rem;
+    background: #f1c40f;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.register-content button.btn:hover {
+    background: #e1b107;
+}
+
+.register-content p {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #ccc;
+    text-align: center;
+}
+
+.register-content p a {
+    color: #f1c40f;
+    text-decoration: none;
+}
+
+.register-content p a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .register-banner {
+        padding: 4rem 1.5rem;
+        padding-top: 100px;
+    }
+    .register-banner .register-content h2 {
+        font-size: 2.5rem;
+    }
+    .register-banner .register-content p {
+        font-size: 1.1rem;
+    }
+    .register-form {
+        padding: 2rem 1.5rem;
+    }
+    .register-content input {
+        font-size: 1rem;
+    }
+    .register-content button.btn {
+        font-size: 1rem;
+        padding: 0.8rem 2rem;
+    }
+}

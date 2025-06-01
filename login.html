@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вход</title>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/login.css">
+  <link rel="stylesheet" href="assets/css/modal.css">
+
+</head>
+<body>
+<header class="header">
+  <div class="logo">
+    <h1>Фитнес традиция</h1>
+  </div>
+  <nav class="nav">
+    <a href="index.html" class="nav-link">Главная</a>
+    <a href="join.html" class="nav-link">Абонементы</a>
+    <a href="contact.html" class="nav-link">Контакты</a>
+    <a href="login.html" class="nav-link" id="loginLink">Вход</a>
+    <a href="register.html" class="nav-link" id="registerLink">Регистрация</a>
+    <a href="dashboard.html" class="nav-link" id="dashboardLink" style="display: none;">Личный кабинет</a>
+    <a href="logout.html" class="nav-link" id="logoutLink" style="display: none;">Выход</a>
+  </nav>
+</header>
+<main>
+  <section class="login-banner animated-section">
+    <div class="login-content">
+      <h2>Вход</h2>
+      <p>Войдите в свой аккаунт.</p>
+    </div>
+  </section>
+  <section class="login-form animated-section">
+    <form class="login-content" id="loginForm">
+      <input type="email" id="email" name="email" placeholder="Email" required>
+      <input type="password" id="password" name="password" placeholder="Пароль" required>
+      <button type="submit" class="btn">Войти</button>
+      <p><a href="register.html">Нет аккаунта? Зарегистрируйтесь</a></p>
+    </form>
+  </section>
+</main>
+<div id="modal" style="display: none;">
+  <div class="modal-content">
+    <span id="modalClose">×</span>
+    <p id="modalMessage"></p>
+  </div>
+</div>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/modal.js"></script>
+<script src="assets/js/login.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('loginForm');
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        try {
+          const response = await fetch('http://localhost:3000/api/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password }),
+          });
+          const data = await response.json();
+          if (data.error) throw new Error(data.error);
+          localStorage.setItem('user_id', data.id);
+          localStorage.setItem('user_name', data.name);
+          localStorage.setItem('role', data.role);
+          showModal('Вход успешен!');
+          setTimeout(() => window.location.href = 'dashboard.html', 1000);
+        } catch (err) {
+          showModal('Ошибка: ' + err.message);
+        }
+      });
+    }
+  });
+</script>
+</body>
+</html>
