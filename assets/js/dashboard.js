@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', async () => {
-    const API_URL = 'http://localhost:3000/api';
+    const API_URL = 'http://77.246.99.204:3000/api';
     const userId = localStorage.getItem('user_id');
     const userRole = localStorage.getItem('role');
     console.log('Инициализация: userId=', userId, 'userRole=', userRole);

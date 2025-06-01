@@ -1,4 +1,30 @@
-// Регистрация
+const express = require('express');
+const { Pool } = require('pg');
+const cors = require('cors');
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+const pool = new Pool({
+    user: 'postgres',
+    host: 'localhost',
+    database: 'fitness_tradition',
+    password: 'postgres',
+    port: 5432,
+});
+
+// Middleware для обработки ошибок
+app.use((err, req, res, next) => {
+    console.error('Ошибка сервера:', err.message, err.stack);
+    res.status(500).json({ error: 'Внутренняя ошибка сервера', details: err.message });
+});
+
+
+
+
+
+
 app.post('/api/register', async (req, res) => {
     try {
         const { name, email, password } = req.body;
@@ -326,7 +352,7 @@ app.post('/api/admin/generate-test-data', async (req, res) => {
                 VALUES
                     ('Пользователь', 'user@mail.ru', '123123', 'user'),
                     ('Администратор', 'admin@mail.ru', '123123', 'admin')
-                RETURNING id;
+                    RETURNING id;
             `);
 
             // Создание 10 случайных пользователей

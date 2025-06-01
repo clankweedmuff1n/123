@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const API_URL = 'http://localhost:3000/api';
+    const API_URL = 'http://77.246.99.204:3000/api';
     const planButtons = document.querySelectorAll('.select-plan');
     const purchaseButtons = document.querySelectorAll('.purchase-plan');
     const joinFormSection = document.querySelector('.join-form');
